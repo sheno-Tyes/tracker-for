@@ -17,8 +17,10 @@ jobs:
           echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
       - name: get to file
         run: |
-          list=`wget -qO- https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt --no-check-certificate |awk NF|sed ":a;N;s/\n/,/g;ta"`
-          echo "${list}" > tracker.txt
+          list1=`wget -qO- https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all_ip.txt --no-check-certificate |awk NF|sed ":a;N;s/\n/,/g;ta"`
+          echo "${list1}" > trackers_all_ip.txt
+          list2=`wget -qO- https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt --no-check-certificate |awk NF|sed ":a;N;s/\n/,/g;ta"`
+          echo "${list2}" > trackers_all.txt
       - name: Move files to publish directory
         run: |
           mkdir -p publish
