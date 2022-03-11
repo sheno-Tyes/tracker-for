@@ -23,6 +23,9 @@ jobs:
           echo "${list2}" > trackers_all.txt
           list3=`wget -qO- https://gitee.com/harvey520/www.yaozuopan.top/raw/master/blacklist.txt --no-check-certificate |awk NF|sed ":a;N;s/\n/,/g;ta"`
           echo "${list3}" > blacklist.txt
+          echo "${list1}" > all.txt
+          echo ",${list2}" >> all.txt
+          echo ",${list3}" >> all.txt
       - name: Move files to publish directory
         run: |
           mkdir -p publish
