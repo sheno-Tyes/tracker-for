@@ -24,11 +24,11 @@ jobs:
           list3=`wget -qO- https://gitee.com/harvey520/www.yaozuopan.top/raw/master/blacklist.txt --no-check-certificate |awk NF|sed ":a;N;s/\n/,/g;ta"`
           echo "${list3}" > blacklist.txt
           cat trackers_all_ip.txt > all-0.txt
-          sed -i 's/$/,/' all-0.txt
-          cat all-0.txt trackers_all.txt > all-1.txt
-          sed -i ":a;N;s/\n//g;ta" all-1.txt
-          sed -i 's/$/,/' all-1.txt
-          cat all-1.txt blacklist.txt > all.txt
+          sed -i 's/$/,/' all-0.tx
+          cat all-0.tx trackers_all.txt > all-1.tx
+          sed -i ":a;N;s/\n//g;ta" all-1.tx
+          sed -i 's/$/,/' all-1.tx
+          cat all-1.tx blacklist.txt > all.txt
           sed -i ":a;N;s/\n//g;ta" all.txt
       - name: Move files to publish directory
         run: |
