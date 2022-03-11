@@ -23,7 +23,7 @@ jobs:
           echo "${list2}" > trackers_all.txt
           list3=`wget -qO- https://gitee.com/harvey520/www.yaozuopan.top/raw/master/blacklist.txt --no-check-certificate |awk NF|sed ":a;N;s/\n/,/g;ta"`
           echo "${list3}" > blacklist.txt
-          cat trackers_all_ip.txt > all-0.txt
+          cat trackers_all_ip.txt > all-0.tx
           sed -i 's/$/,/' all-0.tx
           cat all-0.tx trackers_all.txt > all-1.tx
           sed -i ":a;N;s/\n//g;ta" all-1.tx
